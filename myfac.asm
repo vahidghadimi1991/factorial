@@ -1,7 +1,7 @@
 segment .data
 
 i:	dq 100
-fmt: db "%d",10,0
+var1: db "%d",10,0
 fmt1: db "%d",0
 a: dq 0
 b: dq 0
@@ -24,14 +24,13 @@ main:
 	call scanf
 	mov rax, [a]
 	push rax
-	;mov rax, [b]
-	;push rax
+	
 
-	call L1
+	call mypro
 	leave
 	ret
 
-L1:	
+mypro:	
 	push rbp
 	mov rbp, rsp
 	mov rax, [rbp+16]
@@ -49,7 +48,7 @@ loop1:
 
 
 print:
-	mov rdi, fmt
+	mov rdi, var1
 	mov rsi, rax
 	mov rax, 0
 	call printf
