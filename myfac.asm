@@ -3,8 +3,8 @@ segment .data
 i:	dq 100
 var1: db "%d",10,0
 var2: db "%d",0
-a: dq 0
-b: dq 0
+i: dq 0
+j: dq 0
 
 segment .text
 global main
@@ -20,9 +20,9 @@ main:
 	
 
 	mov rdi, var2
-	mov rsi, a
+	mov rsi, i
 	call scanf
-	mov rax, [a]
+	mov rax, [i]
 	push rax
 	
 
