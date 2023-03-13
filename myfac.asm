@@ -2,7 +2,7 @@ segment .data
 
 i:	dq 100
 var1: db "%d",10,0
-fmt1: db "%d",0
+var2: db "%d",0
 a: dq 0
 b: dq 0
 
@@ -19,7 +19,7 @@ main:
 	
 	
 
-	mov rdi, fmt1
+	mov rdi, var2
 	mov rsi, a
 	call scanf
 	mov rax, [a]
